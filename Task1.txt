@@ -1,0 +1,28 @@
+recommended ordered steps I will need to apply to complete the tasks of:
+
+    Extending the add method for StringCalculator class to cover the new requirements above
+	- add an else if that checks if number.trim() is negative, throws an exception if true
+	- rewrite first if so that it also checks if number.trim() is greater than 1000
+
+    Write an entire Test class that focuses only on testing the new requirements (Extended Functionalities)
+	@Test
+	public void testNegative() {
+		String ints = "1, 3, -1";
+
+        	try {
+            	StringCalculator.add(ints);
+        	}
+        	catch (Exception e) {
+            	assert e.getMessage().equals("negatives not allowed.");
+        	}
+		
+	}
+
+	@Test
+	public void testLarge() {
+		String ints = "1, 3, 1001";
+        	int x = StringCalculator.add(ints);
+        	assertEquals(4, x);
+		
+	}
+	
